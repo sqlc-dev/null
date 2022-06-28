@@ -13,6 +13,8 @@ pass [go-sql-test](https://github.com/bradfitz/go-sql-test).
 
 pgx
 
+https://github.com/jackc/pgx/issues/1169#issuecomment-1155897986
+
 ```go
 type Status byte
 
