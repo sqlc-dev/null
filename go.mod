@@ -1,3 +1,3 @@
-module github.com/tabbed/null
+module github.com/sqlc-dev/null
 
 go 1.18

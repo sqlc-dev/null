@@ -1,4 +1,4 @@
-module github.com/tabbed/null_tests
+module github.com/sqlc-dev/null_tests
 
 go 1.18
 

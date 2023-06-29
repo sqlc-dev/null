@@ -6,22 +6,22 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"github.com/tabbed/null"
+	"github.com/sqlc-dev/null"
 )
 
 func scan[T comparable](t *testing.T, db *sql.DB, query string, expected T) {
-		var actual null.Nullable[T]
-		err := db.QueryRow(query).Scan(&actual)
-		if err != nil {
-				t.Error(err)
-				return
-		}
-		if !actual.Valid {
-				t.Error("expected nullable to be valid")
-		}
-		if actual.Val != expected {
-				t.Errorf("want %#v; got %#v", expected, actual.Valid)
-		}
+	var actual null.Nullable[T]
+	err := db.QueryRow(query).Scan(&actual)
+	if err != nil {
+		t.Error(err)
+		return
+	}
+	if !actual.Valid {
+		t.Error("expected nullable to be valid")
+	}
+	if actual.Val != expected {
+		t.Errorf("want %#v; got %#v", expected, actual.Valid)
+	}
 }
 
 func TestNull(t *testing.T) {
